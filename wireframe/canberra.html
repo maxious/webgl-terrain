@@ -26,7 +26,7 @@
     camera.position.y = -200;
     camera.position.z = 100;
 
-var scale = 200;
+var scale = 500;
 // x is east/red
 
 var maxX = 150.9998611;
@@ -65,10 +65,10 @@ scene.add( meshHome );
     //renderer.shadowMapEnabled = true;
     //renderer.shadowMapSoft = true;
 
-    loadTerrain('../assets/canberra.bin', function (data){
+    loadTerrain('../assets/canberra-s1s.bin', function (data){
         //console.log(data);
 
-        var geometry = new THREE.PlaneGeometry(200, 200, 199, 199);
+        var geometry = new THREE.PlaneGeometry(scale, scale, scale-1, scale-1);
         geometry.computeFaceNormals();
         geometry.computeVertexNormals();
 
@@ -76,10 +76,18 @@ scene.add( meshHome );
             geometry.vertices[i].z = data[i] / 65535 * 100;
         }
 
-        var material = new THREE.MeshPhongMaterial({
+/*        var material = new THREE.MeshPhongMaterial({
             color: 0xdddddd, 
             wireframe: true
+        });*/
+        var material = new THREE.MeshPhongMaterial({
+            map: THREE.ImageUtils.loadTexture('../assets/canberra-texture.png'),
+bumpMap: THREE.ImageUtils.loadTexture('../assets/canberra-s1s.png'),
+bumpScale: 0.005,
+specularMap: THREE.ImageUtils.loadTexture('../assets/canberra-s1s.png'),
+specular: new THREE.Color('grey')
         });
+
 
         var plane = new THREE.Mesh(geometry, material);
         plane.castShadow = true;
@@ -94,7 +102,7 @@ scene.add( meshHome );
 
         var light = new THREE.DirectionalLight(0xffffff, 1);
         light.shadowCameraVisible = true;
-        light.position.set(0,300,100);
+        light.position.set(0,400,2000);
         scene.add(light);
 
         render();

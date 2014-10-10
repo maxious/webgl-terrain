@@ -14,5 +14,6 @@ gdalinfo -mm canberra-s1s.tif
 #gdal_translate -scale -86 1898 0 255 -outsize 200 200 -of PNG canberra-s1s.tif canberra-s1s.png
 #gdal_translate -scale -86 1898 0 65535 -ot UInt16 -outsize 200 200 -of ENVI canberra-s1s.tif canberra-s1s.bin
 gdal_translate -scale -86 1898 0 255 -outsize 2700 2700 -of PNG canberra-s1s.tif canberra-s1s.png
-gdal_translate -scale -86 1898 0 2000 -ot UInt16 -outsize 675 675 -of ENVI canberra-s1s.tif canberra-s1s.bin
+gdal_translate -scale -86 1898 0 65535 -ot UInt16 -outsize 400 400 -of ENVI canberra-s1s.tif canberra-s1s.bin
+#gdal_translate -scale -86 1898 0 2000 -ot UInt16 -outsize 675 675 -of ENVI canberra-s1s.tif canberra-s1s.bin
 

@@ -1,0 +1,7 @@
+[
+{"hex":"7c6d8e", "squawk":"3274", "flight":"QFA460  ", "lat":-34.867347, "lon":149.195309, "validposition":1, "altitude":32400,  "vert_rate":-960,"track":51, "validtrack":1,"speed":404, "messages":1203, "seen":1},
+{"hex":"7c6d9f", "squawk":"4017", "flight":"QFA463  ", "lat":-35.425974, "lon":149.324886, "validposition":1, "altitude":37975,  "vert_rate":0,"track":235, "validtrack":1,"speed":416, "messages":255, "seen":3},
+{"hex":"7c6d31", "squawk":"4343", "flight":"VOZ878  ", "lat":-35.766129, "lon":148.733082, "validposition":1, "altitude":34000,  "vert_rate":0,"track":236, "validtrack":1,"speed":415, "messages":539, "seen":34},
+{"hex":"7c6b0e", "squawk":"1305", "flight":"JST752  ", "lat":-34.315704, "lon":149.169336, "validposition":1, "altitude":37000,  "vert_rate":0,"track":11, "validtrack":1,"speed":449, "messages":1797, "seen":37},
+{"hex":"7c6d9a", "squawk":"1025", "flight":"QFA843  ", "lat":-34.719962, "lon":149.219742, "validposition":1, "altitude":31675,  "vert_rate":-1408,"track":69, "validtrack":1,"speed":439, "messages":315, "seen":273}
+]
