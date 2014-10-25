@@ -19,7 +19,7 @@
 
     var scene = new THREE.Scene();
 
-    var axes = new THREE.AxisHelper(200);
+    var axes = new THREE.AxisHelper(200); // The X axis is red. The Y axis is green. The Z axis is blue (up). http://threejs.org/docs/#Reference/Extras.Helpers/AxisHelper
     scene.add(axes);
 
     var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
@@ -47,7 +47,7 @@ meshY.position.y = 150;
 var originX = 149.4998611
 var originY = -34.5001389
 
-// Z is depth/blue
+// Z is depth/height/blue
 var maxZ = 900;
 var minZ = 600;
 
@@ -105,10 +105,18 @@ specular: new THREE.Color('grey')
         light.position.set(0,400,2000);
         scene.add(light);
 
-        render();
+        render(new Date().getTime());
 
-        function render() {
+        function render(t) {
             controls.update();    
+	     
+	// spin the camera in a circle
+        //camera.position.x = -600; //Math.cos(t/1000)*600;
+        //camera.position.z = 150;
+        //camera.position.y = Math.sin(t/1000)*600;
+        // you need to update lookAt every frame
+       // camera.lookAt(scene.position);
+
             requestAnimationFrame(render);
             renderer.render(scene, camera);
         }
